@@ -1,30 +1,28 @@
-Integer.include CoreExtensions::Integer
+require_relative 'lib/core_extensions/integer/digits.rb'
 
-module Board
-  @color = ["red", "green", "blue", "yellow", "magenta", "cyan"]
-  @answerKey = ["blank", "red", "green"]
-  
-  
+class Board
   def initialize
-  @board = []
+    @board = []
+    @color = %w[red green blue yellow magenta cyan]
+    @answer_key = %w[blank red green]
   end
-  
-  def makeAttempt(guessSeed)
-    answerSeed = 1221
-    attempt = new row(guessSeed, answerSeed)
-    @board << attempt
-    p @board
-  end
-  
-  def row(guessSeed, answerSeed)
-    row = [[],[]]
-    guessSeed.digits.each do |i| 
-      row[0] << @color[i - 1] # figure out how to handle leading zeros better
+
+  def create_row(guess_seed, answer_seed)
+    row = [[], []]
+    guess_seed.digits.each do |i|
+      row[0] << @color[i - 1] # figure out how to handle leading zeros
     end
-    puts "\n"
-    answerSeed.digits.each do |i|
-      row[1] << @answerKey[i - 1] # figure out how to handle leading zeros better
+    answer_seed.digits.each do |i|
+      row[1] << @answer_key[i - 1] # figure out how to handle leading zeros
     end
     row
+  end
+
+  def add(row)
+    @board << row
+  end
+
+  def display
+    p @board
   end
 end
