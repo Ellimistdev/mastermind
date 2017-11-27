@@ -13,6 +13,12 @@
 In the current state it must run in irb with:
 ```bash
 irb -r ./mastermind.rb
+game = Mastermind.new
+```
+then you may call the public methods available:
+```bash
+make_attempt
+render
 ```
 eventually you will start the game with
 ```bash
