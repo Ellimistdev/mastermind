@@ -1,6 +1,9 @@
 require_relative 'board.rb'
 
 class Game
+  attr_reader :victory
+  attr_reader :attempts
+
   def initialize
     @board = Board.new
     @attempts = 12
@@ -19,14 +22,6 @@ class Game
     @board.display
     @solution # remove before completion
   end
-
-  def win?
-    @victory
-  end
-
-  def attempts
-    @attempts
-  end  
 
   private
 
