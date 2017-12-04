@@ -1,8 +1,7 @@
 require_relative 'board.rb'
 
 class Game
-  attr_reader :victory
-  attr_reader :attempts
+  attr_reader :victory, :attempts
 
   def initialize
     @board = Board.new
@@ -13,6 +12,7 @@ class Game
 
   def make_attempt(guess_seed)
     answer_seed = validate_guess(guess_seed)
+    puts "guess: #{guess_seed}"
     @board.add(@board.create_row(guess_seed, answer_seed))
     @attempts -= 1
     @victory = true if answer_seed == 3333
@@ -55,7 +55,6 @@ class Game
   end
 
   def find_close_matches(values)
-    puts values[1].join.to_i
     values[1].each do |num|
       if values[0].any? { |i| i == num }
         values[2] << 2

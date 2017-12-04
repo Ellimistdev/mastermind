@@ -7,7 +7,7 @@ class Mastermind
 
   def run
     game = Game.new
-    until game.victory || game.attempts < 0
+    until game.victory || game.attempts < 1
       puts 'please enter your attempt'
       input = gets.chomp.to_i # must validate
       game.make_attempt(input)
@@ -28,8 +28,7 @@ class Mastermind
       action = gets.chomp.downcase
     end
 
-    restart = action == 'y'
-    run if restart
+    run if action == 'y'
     close
   end
 
