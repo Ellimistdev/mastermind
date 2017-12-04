@@ -4,7 +4,7 @@ module CoreExtensions
       def colorize(code)
         "\e[#{code}m#{self}\e[0m"
       end
-      
+
       def red
         colorize(31)
       end
@@ -20,7 +20,7 @@ module CoreExtensions
       def blue
         colorize(34)
       end
-  
+
       def magenta
         colorize(35)
       end

@@ -3,8 +3,8 @@ require_relative 'lib/core_extensions/string/colorize.rb'
 class Board
   def initialize
     @board = []
-    @color = ["⚫".red, "⚫".green, "⚫".blue, "⚫".yellow, "⚫".magenta, "⚫".cyan]
-    @answer_key = ["•","•".red, "•".green]
+    @color = ['⚫'.red, '⚫'.green, '⚫'.blue, '⚫'.yellow, '⚫'.magenta, '⚫'.cyan]
+    @answer_key = ['•', '•'.red, '•'.green]
   end
 
   def create_row(guess_seed, answer_seed)

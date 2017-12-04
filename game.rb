@@ -12,7 +12,6 @@ class Game
 
   def make_attempt(guess_seed)
     answer_seed = validate_guess(guess_seed)
-    puts "guess: #{guess_seed}"
     @board.add(@board.create_row(guess_seed, answer_seed))
     @attempts -= 1
     @victory = true if answer_seed == 3333
