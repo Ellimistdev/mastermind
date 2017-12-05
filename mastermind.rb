@@ -36,9 +36,9 @@ class Mastermind
     puts '  correspond to the same position in the submitted code. For example,'
     puts "  the #{'green'.green} feedback indicator below does not neccessarily mean"
     puts "  that the #{'yellow'.yellow} guess indicator is in the correct position."
-    print "\t\tGuess\tFeedback"
-    puts "\n\t______________________________"
-    puts "\t⚫ ".red + ' ⚫ '.green + ' ⚫ '.blue + ' ⚫ '.yellow + ' | ' \
+    print "\t    Guess     Feedback"
+    puts "\n\t________________________"
+    puts "\t• ".red + ' • '.green + ' • '.blue + ' • '.yellow + ' | ' \
          '• ' + ' • ' + ' • '.red + ' • '.green
     puts "\n\nPress ENTER to start the game!"
     gets

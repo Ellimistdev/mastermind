@@ -3,7 +3,7 @@ require_relative 'lib/core_extensions/string/colorize.rb'
 class Board
   def initialize
     @board = []
-    @color = ['⚫'.red, '⚫'.green, '⚫'.yellow, '⚫'.blue, '⚫'.magenta, '⚫'.cyan]
+    @color = ['•'.red, '•'.green, '•'.yellow, '•'.blue, '•'.magenta, '•'.cyan]
     @answer_key = ['•', '•'.red, '•'.green]
   end
 
@@ -23,9 +23,9 @@ class Board
   end
 
   def display
-    print "\tGuess\tFeedback"
+    print '      Guess     Feedback'
     @board.each do |row|
-      puts "\n______________________________"
+      puts "\n____________________________"
       (0..1).each do |i|
         row[i].each do |element|
           print " #{element} "
