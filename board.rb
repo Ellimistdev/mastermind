@@ -3,17 +3,17 @@ require_relative 'lib/core_extensions/string/colorize.rb'
 class Board
   def initialize
     @board = []
-    @color = ['⚫'.red, '⚫'.green, '⚫'.blue, '⚫'.yellow, '⚫'.magenta, '⚫'.cyan]
+    @color = ['⚫'.red, '⚫'.green, '⚫'.yellow, '⚫'.blue, '⚫'.magenta, '⚫'.cyan]
     @answer_key = ['•', '•'.red, '•'.green]
   end
 
   def create_row(guess_seed, answer_seed)
     row = [[], []]
     guess_seed.digits.each_with_index do |val, index|
-      row[0][3 - index] = @color[val - 1] # figure out how to handle leading zeros
+      row[0][3 - index] = @color[val - 1]
     end
     answer_seed.digits.each do |i|
-      row[1] << @answer_key[i - 1] # figure out how to handle leading zeros
+      row[1] << @answer_key[i - 1]
     end
     row
   end
@@ -23,12 +23,14 @@ class Board
   end
 
   def display
+    print "\tGuess\tFeedback"
     @board.each do |row|
-      puts "\n--------------"
+      puts "\n______________________________"
       (0..1).each do |i|
         row[i].each do |element|
-          print "#{element} "
+          print " #{element} "
         end
+        print ' | '
       end
     end
   end

@@ -19,7 +19,19 @@ class Game
 
   def render
     @board.display
-    @solution # remove before completion
+  end
+
+  def convert_input
+    input_to_i = { 'r' => 1, 'g' => 2, 'y' => 3, 'b' => 4, 'm' => 5, 'c' => 6 }
+    input = gets.chomp.downcase
+
+    until /[rgybmc]{4,4}/ =~ input && input.length == 4
+      puts 'ERROR: INVALID ACCESS CODE'
+      puts "ENTER A 4 CHARACTER CODE CONTAINING 'R' 'G' 'Y' 'B' 'M' OR 'C'"
+      input = gets.chomp.downcase
+    end
+
+    input.chars.map { |char| input_to_i[char] }.join.to_i
   end
 
   private
