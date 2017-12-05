@@ -9,20 +9,20 @@
 ## Background
 [Wikipedia](https://en.wikipedia.org/wiki/Mastermind_(board_game))
 
-## Usage
-In the current state it must run in irb with:
-```bash
-irb -r ./mastermind.rb
-game = Mastermind.new
-```
-eventually you will start the game with
-```bash
-ruby mastermind.rb
-```
+## Live Demo
+https://repl.it/@endotnick/Mastermind
 
-## Install
+## Requirements
+This project requires usage of Ruby version 2.4.1, which may be installed from https://www.ruby-lang.org/en/documentation/installation/
+
+## Usage
+Install via:
 ```bash
 git clone https://github.com/endotnick/mastermind.git
+```
+Navigate to the installation directory and run with:
+```bash
+ruby mastermind.rb
 ```
 
 ## Acknowledgments
